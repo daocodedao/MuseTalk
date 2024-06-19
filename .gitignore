@@ -6,6 +6,6 @@
 .ipynb_checkpoints
 models
 results/
-data/audio/*.wav
-data/video/*.mp4
+# data/audio/*.wav
+# data/video/*.mp4
 venv/
