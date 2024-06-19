@@ -1,5 +1,7 @@
 import argparse
 import os
+import time,datetime,json,os,sys
+
 from omegaconf import OmegaConf
 import numpy as np
 import cv2
@@ -38,6 +40,11 @@ def main(args):
         input_basename = os.path.basename(video_path).split('.')[0]
         audio_basename  = os.path.basename(audio_path).split('.')[0]
         output_basename = f"{input_basename}_{audio_basename}"
+
+        timestamp = int(datetime.datetime.now().timestamp())
+        string_timestamp = str(timestamp)
+        output_basename = string_timestamp
+
         result_img_save_path = os.path.join(args.result_dir, output_basename) # related to video & audio inputs
         crop_coord_save_path = os.path.join(result_img_save_path, input_basename+".pkl") # only related to video input
         os.makedirs(result_img_save_path,exist_ok =True)
@@ -144,7 +151,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--inference_config", type=str, default="configs/inference/test_img.yaml")
     parser.add_argument("--bbox_shift", type=int, default=0)
-    parser.add_argument("--result_dir", default='./results', help="path to output")
+    parser.add_argument("--result_dir", default='./data3/work/musetalk', help="path to output")
 
     parser.add_argument("--fps", type=int, default=25)
     parser.add_argument("--batch_size", type=int, default=8)
