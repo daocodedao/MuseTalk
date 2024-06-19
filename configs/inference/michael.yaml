@@ -1,0 +1,4 @@
+task_0:
+ video_path: "data/video/michael.mp4"
+ audio_path: "data/audio/michael.mp3"
+
