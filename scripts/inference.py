@@ -151,7 +151,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--inference_config", type=str, default="configs/inference/test_img.yaml")
     parser.add_argument("--bbox_shift", type=int, default=0)
-    parser.add_argument("--result_dir", default='./data3/work/musetalk', help="path to output")
+    parser.add_argument("--result_dir", default='/data3/work/musetalk', help="path to output")
 
     parser.add_argument("--fps", type=int, default=25)
     parser.add_argument("--batch_size", type=int, default=8)
